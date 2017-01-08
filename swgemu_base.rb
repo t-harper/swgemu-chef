@@ -50,10 +50,6 @@ link "/usr/lib64/libmysqlclient.so" do
   to "/usr/lib64/mysql/libmysqlclient.so"
 end
 
-remote_file "/tmp/db-5.0.32.NC.tar.gz" do
-  source "http://download.oracle.com/berkeley-db/db-5.0.32.NC.tar.gz"
-end
-
 remote_file "/tmp/lua-5.3.3.tar.gz" do
   source "https://www.lua.org/ftp/lua-5.3.3.tar.gz"
 end
