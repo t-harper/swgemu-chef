@@ -1,0 +1,6 @@
+[submodule "Core3"]
+	path = Core3
+	url = http://review.swgemu.com/Core3
+[submodule "PublicEngine"]
+	path = PublicEngine
+	url = http://review.swgemu.com/PublicEngine
