@@ -22,6 +22,10 @@ end
   java-1.8.0-openjdk-devel
   vim-enhanced
   git
+  libdb
+  libdb-cxx
+  libdb-devel
+  libdb-cxx-devel
 ).each do |p|
   package p do
     action :install
@@ -49,39 +53,6 @@ end
 remote_file "/tmp/db-5.0.32.NC.tar.gz" do
   source "http://download.oracle.com/berkeley-db/db-5.0.32.NC.tar.gz"
 end
-
-#bash 'install_berkeley' do
-#  cwd '/tmp'
-#  code <<-EOF
-#  tar -xf db-5.0.32.NC.tar.gz
-#  cd db-5.0.32.NC/build_unix
-#  ../dist/configure
-#  make
-#  make install
-#  EOF
-#  not_if { ::File.exist?("/usr/local/BerkeleyDB.5.0/lib/libdb.so") }
-#end
-
-#template "/etc/ld.so.conf.d/berkeley-x86_64.conf" do
-#  source "/vagrant/templates/berkeley-x86_64.conf.erb"
-#  local true
-#  owner "root"
-#  group "root"
-#  mode "0644"
-#end
-
-#template "/etc/profile.d/berkeley.sh" do
-#  source "/vagrant/templates/berkeley.sh.erb"
-#  local true
-#  owner "root"
-#  group "root"
-#  mode "0644"
-#end
-
-package "libdb"
-package "libdb-devel"
-package "libdb-cxx"
-package "libdb-cxx-devel"
 
 remote_file "/tmp/lua-5.3.3.tar.gz" do
   source "https://www.lua.org/ftp/lua-5.3.3.tar.gz"
