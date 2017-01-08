@@ -16,7 +16,4 @@ Vagrant.configure("2") do |config|
   for i in 44452..44463
     config.vm.network :forwaded_port, guest: i, host:i
   end
-
-  config.vm.network "forwarded_port", guest: 3306, host: 3307
-  config.vm.network "forwarded_port", guest: 44452, host: 44452
 end
